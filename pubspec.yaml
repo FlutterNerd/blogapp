@@ -1,0 +1,27 @@
+name: blog_app_final
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^0.5.3
+  cloud_firestore: ^0.14.4
+  firebase_storage: ^5.2.0
+
+  image_picker: ^0.6.7+17
+
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
