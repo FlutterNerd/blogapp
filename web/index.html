@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -23,13 +24,32 @@
   <meta name="apple-mobile-web-app-title" content="blog_app_final">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js"></script>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>blog_app_final</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAGY51NDtcx-XdUHGzJ7p0YPiyrYuFysZ8",
+      authDomain: "blog-app-final.firebaseapp.com",
+      projectId: "blog-app-final",
+      storageBucket: "blog-app-final.appspot.com",
+      messagingSenderId: "984786401439",
+      appId: "1:984786401439:web:33146acf668cab673e4aaa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -42,4 +62,5 @@
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
+
 </html>

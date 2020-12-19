@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:random_string/random_string.dart';
 
 class CreateBlog extends StatefulWidget {
   @override
@@ -42,7 +43,8 @@ class _CreateBlogState extends State<CreateBlog> {
       // upload image
       FirebaseStorage storage = FirebaseStorage.instance;
 
-      Reference storageReference = storage.ref().child("/blogImages");
+      Reference storageReference =
+          storage.ref().child("/blogImages/${randomAlphaNumeric(20)}.jpg");
 
       UploadTask uploadTask = storageReference.putFile(_selectedImage);
 
@@ -60,7 +62,8 @@ class _CreateBlogState extends State<CreateBlog> {
         "author": authorTextEditingController.text,
         "desc": descTextEditingController.text,
         "title": titleTextEditingController.text,
-        "imgUrl": imageUrl
+        "imgUrl": imageUrl,
+        "time": DateTime.now().millisecond
       };
 
       // upload to firebase
@@ -129,6 +132,7 @@ class _CreateBlogState extends State<CreateBlog> {
                       TextField(
                         controller: descTextEditingController,
                         decoration: InputDecoration(hintText: "description"),
+                        maxLines: 3,
                       )
                     ],
                   ),
